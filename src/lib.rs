@@ -1,10 +1,13 @@
 mod error;
-mod fault_manager;
-mod fault_manager_graph;
-pub use crate::{
+mod fault;
+mod fault_manager_builder;
+pub use self::{
     error::Error,
-    fault_manager::FaultManager,
-    fault_manager_graph::FaultManagerGraph,
+    fault::{
+        FaultDetector,
+        TempFaultDetector,
+    },
+    fault_manager_builder::FaultManagerBuilder,
 };
 use std::result::Result as StdResult;
 type Result<T> = StdResult<T, Error>;
