@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod unit_tests;
-use crate::FaultDetector;
+use crate::Event;
 use petgraph::{
     Directed,
     graph::{
@@ -8,21 +8,21 @@ use petgraph::{
         NodeIndex,
     },
 };
-type GraphType<'a> = Graph<&'a dyn FaultDetector, (), Directed, usize>;
+type GraphType<'a> = Graph<&'a dyn Event, (), Directed, usize>;
 
 #[derive(Debug)]
-pub struct ReporterId(NodeIndex<usize>);
+pub struct EventId(NodeIndex<usize>);
 
 #[derive(Debug)]
-pub struct FaultManagerGraph<'a>(GraphType<'a>);
+pub struct EventManagerGraph<'a>(GraphType<'a>);
 
-impl<'a> FaultManagerGraph<'a> {
+impl<'a> EventManagerGraph<'a> {
     pub(super) fn new() -> Self {
         Self(GraphType::<'a>::default())
     }
 
-    pub(super) fn add_detector(&mut self, detector: &'a dyn FaultDetector) -> ReporterId {
-        ReporterId(self.0.add_node(detector))
+    pub(super) fn add_event(&mut self, event: &'a dyn Event) -> EventId {
+        EventId(self.0.add_node(event))
     }
 
     #[inline]

@@ -27,21 +27,21 @@ impl MockTempSensor {
     }
 }
 
-impl FaultDetector for MockTempSensor {
-    fn is_faulted(&self) -> bool {
+impl Event for MockTempSensor {
+    fn is_triggered(&self) -> bool {
         self.times_called.fetch_add(1, Ordering::Relaxed);
         self.should_fault
     }
 }
 
 #[test]
-fn fault_detector_does_not_trigger_when_bound_to_non_faulting_sensor() {
-    // given a FaultDetector bound to a MockTemperatureSensor
+fn event_does_not_trigger_when_bound_to_non_faulting_sensor() {
+    // given a Event bound to a MockTemperatureSensor
     let mock = MockTempSensor::new(false);
-    let detector = TempFaultDetector::new(mock);
+    let event = TempEvent::new(mock);
 
     // when fault status is checked
-    let result = detector.is_faulted();
+    let result = event.is_triggered();
 
     // then there should be no fault
     assert_eq!(result, false);

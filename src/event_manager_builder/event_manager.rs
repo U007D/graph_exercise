@@ -4,15 +4,15 @@ use crate::{
     Error,
     Result,
 };
-use super::FaultManagerGraph;
+use super::EventManagerGraph;
 
 #[derive(Debug)]
-pub struct FaultManager<'a> {
-    graph: FaultManagerGraph<'a>,
+pub struct EventManager<'a> {
+    graph: EventManagerGraph<'a>,
 }
 
-impl<'a> FaultManager<'a> {
-    pub(super) fn new(graph: FaultManagerGraph<'a>) -> Result<Self> {
+impl<'a> EventManager<'a> {
+    pub(super) fn new(graph: EventManagerGraph<'a>) -> Result<Self> {
         match graph.is_empty() {
             true => Err(Error::EmptyGraph),
             false => Ok(Self {
