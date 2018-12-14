@@ -8,15 +8,19 @@ use petgraph::{
         NodeIndex,
     },
 };
+use std::fmt::{
+    Debug,
+    Formatter,
+    Result as FmtResult,
+};
 type GraphType<'a> = Graph<&'a dyn Event, (), Directed, usize>;
 
 #[derive(Debug)]
 pub struct EventId(NodeIndex<usize>);
 
-#[derive(Debug)]
-pub struct EventManagerGraph<'a>(GraphType<'a>);
+pub struct EventGraph<'a>(GraphType<'a>);
 
-impl<'a> EventManagerGraph<'a> {
+impl<'a> EventGraph<'a> {
     pub(super) fn new() -> Self {
         Self(GraphType::<'a>::default())
     }
@@ -32,3 +36,8 @@ impl<'a> EventManagerGraph<'a> {
     pub fn len(&self) -> usize { self.0.node_count() }
 }
 
+impl<'a> Debug for EventGraph<'a> {
+    fn fmt(&self, f: &mut Formatter) -> FmtResult {
+        write!(f, "<EventGraph>")
+    }
+}

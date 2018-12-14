@@ -1,27 +1,27 @@
+mod event_graph;
 mod event_manager;
-mod event_manager_graph;
 use crate::{
     Event,
     Result,
 };
 pub use self::{
     event_manager::EventManager,
-    event_manager_graph::{
-        EventManagerGraph,
+    event_graph::{
+        EventGraph,
         EventId,
-    }
+    },
 };
 #[cfg(test)]
 mod unit_tests;
 
 pub struct EventManagerBuilder<'a>{
-    graph: EventManagerGraph<'a>,
+    graph: EventGraph<'a>,
 }
 
 impl<'a> EventManagerBuilder<'a> {
     pub fn new() -> Self {
         Self {
-            graph: EventManagerGraph::new(),
+            graph: EventGraph::new(),
         }
     }
 
