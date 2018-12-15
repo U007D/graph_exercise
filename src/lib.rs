@@ -1,10 +1,14 @@
 mod error;
-mod fault_manager;
-mod fault_manager_graph;
-pub use crate::{
+mod event;
+mod event_manager_builder;
+pub use self::{
     error::Error,
-    fault_manager::FaultManager,
-    fault_manager_graph::FaultManagerGraph,
+    event::{
+        Event,
+        fault_descriptor::*,
+        status_descriptor::*,
+    },
+    event_manager_builder::EventManagerBuilder,
 };
 use std::result::Result as StdResult;
 type Result<T> = StdResult<T, Error>;
