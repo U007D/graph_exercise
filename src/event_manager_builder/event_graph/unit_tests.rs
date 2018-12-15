@@ -21,7 +21,7 @@ fn constructing_an_empty_graph_returns_is_empty_true() {
     let graph = EventGraph::new();
 
     // when it is queried for emptiness
-    let result = graph.is_empty();
+    let _result = graph.is_empty();
 
     // it should report true
     assert!(graph.is_empty());

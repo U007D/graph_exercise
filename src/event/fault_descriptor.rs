@@ -1,6 +1,6 @@
 mod critical;
-mod info;
+mod severe;
 mod warn;
 pub use self::critical::*;
-pub use self::info::*;
+pub use self::severe::*;
 pub use self::warn::*;

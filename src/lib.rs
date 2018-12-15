@@ -6,7 +6,7 @@ pub use self::{
     event::{
         Event,
         fault_descriptor::*,
-        status_descriptor::*,
+        state_descriptor::*,
     },
     event_manager_builder::EventManagerBuilder,
 };

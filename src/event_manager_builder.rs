@@ -14,7 +14,7 @@ pub use self::{
 #[cfg(test)]
 mod unit_tests;
 
-pub struct EventManagerBuilder<'a>{
+pub struct EventManagerBuilder<'a> {
     graph: EventGraph<'a>,
 }
 
@@ -31,5 +31,11 @@ impl<'a> EventManagerBuilder<'a> {
 
     pub fn build(self) -> Result<EventManager<'a>> {
         EventManager::new(self.graph)
+    }
+}
+
+impl<'a> Default for EventManagerBuilder<'a> {
+    fn default() -> Self {
+        Self::new()
     }
 }
