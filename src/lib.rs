@@ -1,11 +1,12 @@
 mod error;
 mod event;
 mod event_manager_builder;
-pub use crate::{
+pub use self::{
     error::Error,
     event::{
         Event,
-        TempFaultDetector,
+        fault_descriptor::*,
+        status_descriptor::*,
     },
     event_manager_builder::EventManagerBuilder,
 };

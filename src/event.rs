@@ -1,5 +1,5 @@
-mod temp_fault_detector;
-pub use self::temp_fault_detector::TempFaultDetector;
+pub mod fault_descriptor;
+pub mod status_descriptor;
 
 use std::fmt::{
     Debug,
@@ -13,6 +13,7 @@ pub trait Event {
 
 impl Debug for Event {
     fn fmt(&self, f: &mut Formatter) -> FmtResult {
+        // TODO(anyone): Write event dump function
         write!(f, "<Event>")
     }
 }

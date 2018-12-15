@@ -38,6 +38,7 @@ impl<'a> EventGraph<'a> {
 
 impl<'a> Debug for EventGraph<'a> {
     fn fmt(&self, f: &mut Formatter) -> FmtResult {
+        // TODO(anyone): Write graph dump function
         write!(f, "<EventGraph>")
     }
 }
