@@ -1,2 +1,2 @@
-//mod critical_temp_fault;
-//use self::critical_temp_fault::TempFault;
+//mod warn_temp_fault;
+//use self::warn_temp_fault::TempFault;
