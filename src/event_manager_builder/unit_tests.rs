@@ -23,7 +23,7 @@ fn constructing_an_event_manager_with_an_empty_graph_returns_an_error() {
     // given a EventManagerBuilder instance
     let builder = EventManagerBuilder::new();
 
-    // when only .build() is called on the fault manager builder
+    // when only .build() is called on the event manager builder
     let result = builder.build();
 
     // then the result is an empty graph
@@ -45,7 +45,7 @@ fn constructing_an_event_manager_with_1_node_reports_1_node() {
 }
 
 #[test]
-fn constructing_an_event_manager_with_2_unconnected_nodes_reports_an_error() {
+fn constructing_an_event_manager_with_5_unconnected_nodes_reports_ok() {
     // given a EventManagerBuilder instance
     let mut builder = EventManagerBuilder::new();
     let mock_event = EventFake::new();
@@ -61,4 +61,20 @@ fn constructing_an_event_manager_with_2_unconnected_nodes_reports_an_error() {
     // then the result is a manager with one node
     assert_eq!(result.unwrap().len(), 5);
 }
+
+#[test]
+fn graph_with_edges_can_be_created() {
+//    // given an event manager graph
+//    let mut graph = EventGraph::new();
+//    let event = TempSensorMock::new(ShouldGenerateFault::Yes);
+//    graph.add_event(&event);
+//    graph.add_event(&event);
+//
+//    // when it is queried for len()
+//    let result = graph.len();
+//
+//    // it should report a len() of 2
+//    assert_eq!(graph.len(), 1);
+}
+
 

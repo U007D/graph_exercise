@@ -1,6 +1,8 @@
 mod error;
 mod event;
 mod event_manager_builder;
+#[cfg(test)]
+mod test_utils;
 pub use self::{
     error::Error,
     event::{
