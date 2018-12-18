@@ -31,6 +31,8 @@ impl<'a> EventManagerBuilder<'a> {
 
     pub fn build(self) -> Result<EventManager<'a>> {
         EventManager::new(self.graph)
+        // add summary node
+        // sort
     }
 }
 

@@ -25,9 +25,7 @@ impl<'a> EventGraph<'a> {
         Self(GraphType::<'a>::default())
     }
 
-    pub(super) fn add_event(&mut self, event: &'a dyn Event) -> EventId {
-        EventId(self.0.add_node(event))
-    }
+    pub(super) fn add_event(&mut self, event: &'a dyn Event) -> EventId { EventId(self.0.add_node(event)) }
 
     #[inline]
     pub fn is_empty(&self) -> bool { self.len() == 0 }
