@@ -1,4 +1,4 @@
-#[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Copy, Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub enum FaultLevel {
     None,
     Warn,
