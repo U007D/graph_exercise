@@ -7,7 +7,6 @@ use crate::{
 };
 use crossbeam_channel::Receiver;
 use super::{
-//    EventEmitter,
     FaultEmitter,
     FaultLevel,
 };
