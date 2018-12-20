@@ -7,7 +7,6 @@ use crate::{
 };
 use crossbeam_channel::Receiver;
 use super::{
-//    EventEmitter,
     FaultEmitter,
     FaultLevel,
 };
@@ -43,13 +42,3 @@ impl FaultEmitter for TempFaultEmitter {
         }
     }
 }
-
-//impl Event for Temp {
-//    fn is_triggered(&self) -> bool {
-//        self.fault_level() != FaultLevel::None
-//    }
-//
-//    fn update(&mut self) -> &mut Self {
-//        unimplemented!()
-//    }
-//}
