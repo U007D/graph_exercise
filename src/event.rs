@@ -1,5 +1,6 @@
-pub mod fault_descriptor;
-pub mod state_descriptor;
+pub mod fault;
+pub mod fault_level;
+pub mod state;
 
 use std::fmt::{
     Debug,

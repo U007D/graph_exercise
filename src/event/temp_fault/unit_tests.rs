@@ -5,7 +5,7 @@ use super::*;
 fn event_does_not_trigger_when_bound_to_triggering_sensor() {
     // given a Event bound to a MockTemperatureSensor
     let event = TempSensorMock::new(ShouldGenerateFault::No);
-    let fault = CriticalTempFault::new(event);
+    let fault = Fault::new(event);
 
     // when fault status is checked
     let result = fault.is_triggered();
@@ -22,7 +22,7 @@ fn event_does_not_trigger_when_bound_to_triggering_sensor() {
 fn event_triggers_when_bound_to_a_triggering_sensor() {
     // given a Event bound to a MockTemperatureSensor
     let event = TempSensorMock::new(ShouldGenerateFault::Yes);
-    let fault = CriticalTempFault::new(event);
+    let fault = Fault::new(event);
 
     // when fault status is checked
     let result = fault.is_triggered();

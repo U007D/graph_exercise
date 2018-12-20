@@ -1,3 +1,4 @@
+#![allow(clippy::result_unwrap_used)]
 use crate::{
     Error,
     Event,

@@ -25,7 +25,7 @@ impl<'a> EventManagerBuilder<'a> {
         }
     }
 
-    pub fn add_edges(&mut self, node_pairs: &[(EventId, EventId)]) -> Result<&mut Self> {
+    pub fn add_edges(&mut self, _node_pairs: &[(EventId, EventId)]) -> Result<&mut Self> {
         Ok(self)
     }
 
@@ -34,9 +34,7 @@ impl<'a> EventManagerBuilder<'a> {
     }
 
     pub fn build(self) -> Result<EventManager<'a>> {
-
-        let summary_node_id = self.graph.add_event(summary_event)
-            EventManager::new(self.graph) // sort
+        unimplemented!()
     }
 }
 
